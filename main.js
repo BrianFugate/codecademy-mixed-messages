@@ -10,10 +10,11 @@
 
 // Create array of objects containing the quotes to use
 const quotes = [
-    {quote: "\n\nI alone cannot change the world, but I can cast a word1 across the word2 to create many word3.",
+    {quote: "\n\nI alone cannot change the world, but I can cast a word0 across the word1 to create many word2.",
     author: 'Mother Teresa',
     types: ['noun', 'noun', 'noun']},
-    {quote: "\n\nTwenty years from now, you will be more disappointed by the things you didn't do than by the ones you did.\nSo, throw off the word1, sail away from safe word2, catch the trade winds in your word3.",
+    {quote: "\n\nTwenty years from now, you will be more disappointed by the things you didn't do than by the"
+    + " ones you did.\nSo, throw off the word0, sail away from safe word1, catch the trade winds in your word2.",
     author: 'Mark Twain',
     types: ['noun', 'noun', 'noun']}];
 
@@ -56,10 +57,10 @@ function pickWord(type) {
 let selectedQuote = Math.floor(Math.random() * quotes.length);
 
 // Replace 3 words in quote
-quotes[selectedQuote].quote = quotes[selectedQuote].quote.replace('word1', pickWord(quotes[selectedQuote].types[0]));
-quotes[selectedQuote].quote = quotes[selectedQuote].quote.replace('word2', pickWord(quotes[selectedQuote].types[1]));
-quotes[selectedQuote].quote = quotes[selectedQuote].quote.replace('word3', pickWord(quotes[selectedQuote].types[2]));
+for (let i = 0; i < 3; i++) {
+    quotes[selectedQuote].quote = quotes[selectedQuote].quote.replace('word' + i.toString(), pickWord(quotes[selectedQuote].types[i]));
+}
 
 // Output to console
 console.log(quotes[selectedQuote].quote);
-console.log(`\n    - NOT ${quotes[selectedQuote].author}`);
+console.log(`\n    - NOT ${quotes[selectedQuote].author}\n`);
