@@ -16,7 +16,10 @@ const quotes = [
     {quote: "\n\nTwenty years from now, you will be more disappointed by the things you didn't do than by the"
     + " ones you did.\nSo, throw off the word0, sail away from safe word1, catch the trade winds in your word2.",
     author: 'Mark Twain',
-    types: ['noun', 'noun', 'noun']}];
+    types: ['noun', 'noun', 'noun']},
+    {quote: "\n\nYou have word0 in your head. You have word1 in your shoes. You can word2 yourself any direction you choose.",
+    author: 'Dr. Seuss',
+    types: ['noun', 'noun', 'verb']}];
 
 // Create arrays of words to enter
 const nouns = ['cat', 'trampoline', 'monster', 'princess', 'lion', 'pirate', 'boat', 'ballerina', 
@@ -46,10 +49,25 @@ const nouns = ['cat', 'trampoline', 'monster', 'princess', 'lion', 'pirate', 'bo
 'bobby pin', 'clamp', 'curling iron', 'straightener', 'tablet', 'doll', 'hairbrush', 'toothbrush', 
 'shower curtain'];
 
+const verbs = ['jump', 'fly', 'swim', 'run', 'eat', 'drink', 'play', 'sleep', 'study', 'work', 
+'dance', 'sing', 'fight', 'laugh', 'love', 'listen', 'watch', 'speak', 'write', 'ride', 'climb', 
+'laugh', 'cry', 'wink', 'slide', 'float', 'fall', 'crawl', 'skip', 'shuffle', 'hop', 'cut', 
+'write', 'draw', 'color', 'staple', 'suck', 'blow', 'chew', 'slurp', 'slime', 'paint', 'hear', 
+'design', 'create', 'wrap', 'tickle', 'poke', 'think', 'whisper', 'wonder', 'pray', 'ponder', 
+'consider', 'chat', 'talk', 'shout', 'yodel', 'call', 'text', 'dial', 'spin', 'throw', 'catch', 
+'grow', 'garden', 'plant', 'sow', 'nurture', 'feed', 'prepare', 'cook', 'clean', 'sew', 'slice', 
+'code', 'organize', 'wipe', 'wire', 'purchase', 'pay', 'burn', 'dust', 'mow', 'drive', 'speed', 
+'cuddle', 'rock', 'record', 'pin', 'brush', 'change', 'tighten', 'pounce', 'bark', 'whine', 
+'whimper', 'skate', 'practice', 'gather'];
+
 // Function used to randomly select appropriate word
 function pickWord(type) {
     if (type == 'noun') {
         return nouns[Math.floor(Math.random() * nouns.length)];
+    } else if (type == 'verb') {
+        return verbs[Math.floor(Math.random() * verbs.length)];
+    } else {
+        return 'invalid type';
     }
 }
 
